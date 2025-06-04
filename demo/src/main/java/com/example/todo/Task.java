@@ -13,8 +13,8 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotBlank(message = "La descripción no puede estar vacía")
-    @Size(min = 1, max = 255, message = "La descripción debe tener entre 1 y 255 caracteres")
+    @NotBlank(message = "La descripció no pot estar buida")
+    @Size(min = 1, max = 255, message = "La descripció ha de tenir entre 1 i 255 caràcters")
     @Column(nullable = false)
     private String description;
     
@@ -37,7 +37,7 @@ public class Task {
     @Column(length = 500)
     private String notes;
 
-    // Constructor vacío requerido por JPA
+    // Constructor buit requerit per JPA
     public Task() {
     }
 
@@ -52,7 +52,7 @@ public class Task {
         this.priority = priority;
     }
 
-    // Métodos del ciclo de vida JPA
+    // Mètodes del cicle de vida JPA
     @PrePersist
     protected void onCreate() {
         if (createdAt == null) {
@@ -71,7 +71,7 @@ public class Task {
         }
     }
 
-    // Getters y setters
+    // Getters i setters
     public Long getId() {
         return id;
     }
@@ -136,12 +136,12 @@ public class Task {
         this.notes = notes;
     }
 
-    // Enum para prioridades
+    // Enum per a prioritats
     public enum Priority {
-        LOW("Baja"),
-        MEDIUM("Media"), 
+        LOW("Baixa"),
+        MEDIUM("Mitjana"), 
         HIGH("Alta"),
-        URGENT("Urgente");
+        URGENT("Urgent");
         
         private final String displayName;
         

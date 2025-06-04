@@ -19,7 +19,7 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
     
-    // Operaciones básicas CRUD
+    // Operacions bàsiques CRUD
     
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
@@ -30,12 +30,12 @@ public class TaskService {
     }
     
     public Task createTask(Task task) {
-        // Validaciones de negocio
+        // Validacions de negoci
         if (task.getDescription() == null || task.getDescription().trim().isEmpty()) {
-            throw new IllegalArgumentException("La descripción de la tarea no puede estar vacía");
+            throw new IllegalArgumentException("La descripció de la tasca no pot estar buida");
         }
         
-        // Establecer valores por defecto
+        // Establir valors per defecte
         if (task.getPriority() == null) {
             task.setPriority(Task.Priority.MEDIUM);
         }
@@ -46,7 +46,7 @@ public class TaskService {
     public Task updateTask(Long id, Task updatedTask) {
         return taskRepository.findById(id)
                 .map(existingTask -> {
-                    // Actualizar solo los campos permitidos
+                    // Actualitzar només els camps permesos
                     if (updatedTask.getDescription() != null && !updatedTask.getDescription().trim().isEmpty()) {
                         existingTask.setDescription(updatedTask.getDescription());
                     }
@@ -58,17 +58,17 @@ public class TaskService {
                     }
                     return taskRepository.save(existingTask);
                 })
-                .orElseThrow(() -> new TaskNotFoundException("Tarea con ID " + id + " no encontrada"));
+                .orElseThrow(() -> new TaskNotFoundException("Tasca amb ID " + id + " no trobada"));
     }
     
     public void deleteTask(Long id) {
         if (!taskRepository.existsById(id)) {
-            throw new TaskNotFoundException("Tarea con ID " + id + " no encontrada");
+            throw new TaskNotFoundException("Tasca amb ID " + id + " no trobada");
         }
         taskRepository.deleteById(id);
     }
     
-    // Operaciones específicas de tareas
+    // Operacions específiques de tasques
     
     public Task completeTask(Long id) {
         return taskRepository.findById(id)
@@ -77,7 +77,7 @@ public class TaskService {
                     task.setCompletedAt(LocalDateTime.now());
                     return taskRepository.save(task);
                 })
-                .orElseThrow(() -> new TaskNotFoundException("Tarea con ID " + id + " no encontrada"));
+                .orElseThrow(() -> new TaskNotFoundException("Tasca amb ID " + id + " no trobada"));
     }
     
     public Task uncompleteTask(Long id) {
@@ -87,7 +87,7 @@ public class TaskService {
                     task.setCompletedAt(null);
                     return taskRepository.save(task);
                 })
-                .orElseThrow(() -> new TaskNotFoundException("Tarea con ID " + id + " no encontrada"));
+                .orElseThrow(() -> new TaskNotFoundException("Tasca amb ID " + id + " no trobada"));
     }
     
     public Task changePriority(Long id, Task.Priority newPriority) {
@@ -96,10 +96,10 @@ public class TaskService {
                     task.setPriority(newPriority);
                     return taskRepository.save(task);
                 })
-                .orElseThrow(() -> new TaskNotFoundException("Tarea con ID " + id + " no encontrada"));
+                .orElseThrow(() -> new TaskNotFoundException("Tasca amb ID " + id + " no trobada"));
     }
     
-    // Consultas avanzadas
+    // Consultes avançades
     
     public List<Task> getPendingTasks() {
         return taskRepository.findByCompleted(false);
@@ -136,7 +136,7 @@ public class TaskService {
         return taskRepository.findCompletedSince(since);
     }
     
-    // Estadísticas
+    // Estadístiques
     
     public TaskStats getTaskStats() {
         long totalTasks = taskRepository.count();
@@ -148,7 +148,7 @@ public class TaskService {
         return new TaskStats(totalTasks, completedTasks, pendingTasks, urgentTasks, highPriorityTasks);
     }
     
-    // Operaciones en lote
+    // Operacions en lot
     
     public void markAllAsCompleted() {
         List<Task> pendingTasks = getPendingTasks();
@@ -171,16 +171,16 @@ public class TaskService {
         List<Task> sampleTasks = List.of(
             new Task("Estudiar Spring Boot", Task.Priority.HIGH),
             new Task("Crear API REST completa", Task.Priority.URGENT),
-            new Task("Escribir documentación", Task.Priority.MEDIUM),
-            new Task("Hacer tests unitarios", Task.Priority.HIGH),
-            new Task("Revisar código", Task.Priority.LOW),
-            new Task("Desplegar aplicación", Task.Priority.MEDIUM)
+            new Task("Escriure documentació", Task.Priority.MEDIUM),
+            new Task("Fer tests unitaris", Task.Priority.HIGH),
+            new Task("Revisar codi", Task.Priority.LOW),
+            new Task("Desplegar aplicació", Task.Priority.MEDIUM)
         );
         
         return taskRepository.saveAll(sampleTasks);
     }
     
-    // Clase interna para estadísticas
+    // Classe interna per a estadístiques
     public static class TaskStats {
         private final long total;
         private final long completed;
@@ -208,7 +208,7 @@ public class TaskService {
         }
     }
     
-    // Excepción personalizada
+    // Excepció personalitzada
     public static class TaskNotFoundException extends RuntimeException {
         public TaskNotFoundException(String message) {
             super(message);

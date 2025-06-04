@@ -11,45 +11,44 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
     
-    // Buscar tareas por estado de completado
+    // Cercar tasques per estat de completat
     List<Task> findByCompleted(boolean completed);
     
-    // Buscar tareas por prioridad
+    // Cercar tasques per prioritat
     List<Task> findByPriority(Task.Priority priority);
     
-    // Buscar tareas pendientes por prioridad
+    // Cercar tasques pendents per prioritat
     List<Task> findByCompletedFalseAndPriority(Task.Priority priority);
     
-    // Buscar tareas que contengan texto en la descripción
+    // Cercar tasques que continguin text a la descripció
     List<Task> findByDescriptionContainingIgnoreCase(String description);
     
-    // Buscar tareas creadas en un rango de fechas
+    // Cercar tasques creades en un rang de dates
     List<Task> findByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
     
-    // Buscar tareas pendientes ordenadas por prioridad
+    // Cercar tasques pendents ordenades per prioritat (consulta corregida)
     @Query("SELECT t FROM Task t WHERE t.completed = false ORDER BY " +
            "CASE t.priority " +
-           "WHEN com.example.todo.Task.Priority.URGENT THEN 1 " +
-           "WHEN com.example.todo.Task.Priority.HIGH THEN 2 " +
-           "WHEN com.example.todo.Task.Priority.MEDIUM THEN 3 " +
-           "WHEN com.example.todo.Task.Priority.LOW THEN 4 " +
+           "WHEN 'URGENT' THEN 1 " +
+           "WHEN 'HIGH' THEN 2 " +
+           "WHEN 'MEDIUM' THEN 3 " +
+           "WHEN 'LOW' THEN 4 " +
            "END, t.createdAt ASC")
     List<Task> findPendingTasksByPriorityOrder();
     
-    // Buscar tareas completadas en los últimos días
+    // Cercar tasques completades en els últims dies
     @Query("SELECT t FROM Task t WHERE t.completed = true AND t.completedAt >= :since")
     List<Task> findCompletedSince(@Param("since") LocalDateTime since);
     
-    // Contar tareas por estado
+    // Comptar tasques per estat
     long countByCompleted(boolean completed);
     
-    // Contar tareas por prioridad
+    // Comptar tasques per prioritat
     long countByPriority(Task.Priority priority);
     
-    // Buscar tareas que vencen pronto (basado en algún criterio personalizado)
+    // Cercar tasques que vencen aviat (consulta corregida)
     @Query("SELECT t FROM Task t WHERE t.completed = false AND " +
-           "(t.priority = com.example.todo.Task.Priority.URGENT OR " +
-           "t.priority = com.example.todo.Task.Priority.HIGH) " +
+           "(t.priority = 'URGENT' OR t.priority = 'HIGH') " +
            "ORDER BY t.priority, t.createdAt")
     List<Task> findUrgentAndHighPriorityTasks();
 } 

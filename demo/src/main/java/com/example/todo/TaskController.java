@@ -20,10 +20,10 @@ public class TaskController {
         this.taskService = taskService;
     }
     
-    // ===== OPERACIONES CRUD BÁSICAS =====
+    // ===== OPERACIONS CRUD BÀSIQUES =====
     
     /**
-     * GET /api/tasks - Obtener todas las tareas
+     * GET /api/tasks - Obtenir totes les tasques
      */
     @GetMapping
     public ResponseEntity<List<Task>> getAllTasks() {
@@ -32,7 +32,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/{id} - Obtener una tarea por ID
+     * GET /api/tasks/{id} - Obtenir una tasca per ID
      */
     @GetMapping("/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
@@ -42,7 +42,7 @@ public class TaskController {
     }
     
     /**
-     * POST /api/tasks - Crear nueva tarea
+     * POST /api/tasks - Crear nova tasca
      */
     @PostMapping
     public ResponseEntity<Task> createTask(@Valid @RequestBody Task task) {
@@ -55,7 +55,7 @@ public class TaskController {
     }
     
     /**
-     * PUT /api/tasks/{id} - Actualizar tarea existente
+     * PUT /api/tasks/{id} - Actualitzar tasca existent
      */
     @PutMapping("/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable Long id, @Valid @RequestBody Task task) {
@@ -70,7 +70,7 @@ public class TaskController {
     }
     
     /**
-     * DELETE /api/tasks/{id} - Eliminar tarea
+     * DELETE /api/tasks/{id} - Eliminar tasca
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
@@ -82,10 +82,10 @@ public class TaskController {
         }
     }
     
-    // ===== OPERACIONES ESPECÍFICAS =====
+    // ===== OPERACIONS ESPECÍFIQUES =====
     
     /**
-     * PATCH /api/tasks/{id}/complete - Marcar tarea como completada
+     * PATCH /api/tasks/{id}/complete - Marcar tasca com a completada
      */
     @PatchMapping("/{id}/complete")
     public ResponseEntity<Task> completeTask(@PathVariable Long id) {
@@ -98,7 +98,7 @@ public class TaskController {
     }
     
     /**
-     * PATCH /api/tasks/{id}/uncomplete - Marcar tarea como pendiente
+     * PATCH /api/tasks/{id}/uncomplete - Marcar tasca com a pendent
      */
     @PatchMapping("/{id}/uncomplete")
     public ResponseEntity<Task> uncompleteTask(@PathVariable Long id) {
@@ -111,7 +111,7 @@ public class TaskController {
     }
     
     /**
-     * PATCH /api/tasks/{id}/priority - Cambiar prioridad de tarea
+     * PATCH /api/tasks/{id}/priority - Canviar prioritat de tasca
      */
     @PatchMapping("/{id}/priority")
     public ResponseEntity<Task> changePriority(@PathVariable Long id, @RequestParam Task.Priority priority) {
@@ -123,10 +123,10 @@ public class TaskController {
         }
     }
     
-    // ===== CONSULTAS AVANZADAS =====
+    // ===== CONSULTES AVANÇADES =====
     
     /**
-     * GET /api/tasks/pending - Obtener tareas pendientes
+     * GET /api/tasks/pending - Obtenir tasques pendents
      */
     @GetMapping("/pending")
     public ResponseEntity<List<Task>> getPendingTasks() {
@@ -135,7 +135,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/completed - Obtener tareas completadas
+     * GET /api/tasks/completed - Obtenir tasques completades
      */
     @GetMapping("/completed")
     public ResponseEntity<List<Task>> getCompletedTasks() {
@@ -144,7 +144,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/by-priority/{priority} - Obtener tareas por prioridad
+     * GET /api/tasks/by-priority/{priority} - Obtenir tasques per prioritat
      */
     @GetMapping("/by-priority/{priority}")
     public ResponseEntity<List<Task>> getTasksByPriority(@PathVariable Task.Priority priority) {
@@ -153,7 +153,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/search?q={query} - Buscar tareas por descripción
+     * GET /api/tasks/search?q={query} - Cercar tasques per descripció
      */
     @GetMapping("/search")
     public ResponseEntity<List<Task>> searchTasks(@RequestParam("q") String query) {
@@ -162,7 +162,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/pending/by-priority - Obtener tareas pendientes ordenadas por prioridad
+     * GET /api/tasks/pending/by-priority - Obtenir tasques pendents ordenades per prioritat
      */
     @GetMapping("/pending/by-priority")
     public ResponseEntity<List<Task>> getPendingTasksByPriority() {
@@ -171,7 +171,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/urgent - Obtener tareas urgentes
+     * GET /api/tasks/urgent - Obtenir tasques urgents
      */
     @GetMapping("/urgent")
     public ResponseEntity<List<Task>> getUrgentTasks() {
@@ -180,7 +180,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/today - Obtener tareas creadas hoy
+     * GET /api/tasks/today - Obtenir tasques creades avui
      */
     @GetMapping("/today")
     public ResponseEntity<List<Task>> getTodaysTasks() {
@@ -189,7 +189,7 @@ public class TaskController {
     }
     
     /**
-     * GET /api/tasks/recently-completed?days={days} - Obtener tareas completadas recientemente
+     * GET /api/tasks/recently-completed?days={days} - Obtenir tasques completades recentment
      */
     @GetMapping("/recently-completed")
     public ResponseEntity<List<Task>> getRecentlyCompleted(@RequestParam(defaultValue = "7") int days) {
@@ -197,10 +197,10 @@ public class TaskController {
         return ResponseEntity.ok(recentlyCompleted);
     }
     
-    // ===== ESTADÍSTICAS =====
+    // ===== ESTADÍSTIQUES =====
     
     /**
-     * GET /api/tasks/stats - Obtener estadísticas de tareas
+     * GET /api/tasks/stats - Obtenir estadístiques de tasques
      */
     @GetMapping("/stats")
     public ResponseEntity<TaskService.TaskStats> getTaskStats() {
@@ -208,10 +208,10 @@ public class TaskController {
         return ResponseEntity.ok(stats);
     }
     
-    // ===== OPERACIONES EN LOTE =====
+    // ===== OPERACIONS EN LOT =====
     
     /**
-     * PATCH /api/tasks/complete-all - Marcar todas las tareas como completadas
+     * PATCH /api/tasks/complete-all - Marcar totes les tasques com a completades
      */
     @PatchMapping("/complete-all")
     public ResponseEntity<Void> markAllAsCompleted() {
@@ -220,7 +220,7 @@ public class TaskController {
     }
     
     /**
-     * DELETE /api/tasks/completed - Eliminar todas las tareas completadas
+     * DELETE /api/tasks/completed - Eliminar totes les tasques completades
      */
     @DeleteMapping("/completed")
     public ResponseEntity<Void> deleteCompletedTasks() {
@@ -229,7 +229,7 @@ public class TaskController {
     }
     
     /**
-     * POST /api/tasks/sample-data - Crear datos de ejemplo
+     * POST /api/tasks/sample-data - Crear dades d'exemple
      */
     @PostMapping("/sample-data")
     public ResponseEntity<List<Task>> createSampleTasks() {
@@ -237,7 +237,7 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).body(sampleTasks);
     }
     
-    // ===== MANEJO DE ERRORES =====
+    // ===== GESTIÓ D'ERRORS =====
     
     @ExceptionHandler(TaskService.TaskNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleTaskNotFound(TaskService.TaskNotFoundException e) {
@@ -251,7 +251,7 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
     
-    // Clase para respuestas de error
+    // Classe per a respostes d'error
     public static class ErrorResponse {
         private String code;
         private String message;
