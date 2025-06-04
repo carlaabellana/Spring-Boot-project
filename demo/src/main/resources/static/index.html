@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📋 TODO API - Pau v4</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --background: #f5f7fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tasks-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--warning-color);
+            color: var(--dark-color);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .task {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            border-left: 4px solid var(--info-color);
+        }
+
+        .task:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .task.completed {
+            background: #f8f9fa;
+            border-left-color: var(--success-color);
+            opacity: 0.8;
+        }
+
+        .task.priority-urgent {
+            border-left-color: var(--danger-color);
+        }
+
+        .task.priority-high {
+            border-left-color: var(--warning-color);
+        }
+
+        .task.priority-medium {
+            border-left-color: var(--info-color);
+        }
+
+        .task.priority-low {
+            border-left-color: var(--secondary-color);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .task-id {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .task-priority {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .priority-urgent { background: #dc3545; color: white; }
+        .priority-high { background: #ffc107; color: #212529; }
+        .priority-medium { background: #17a2b8; color: white; }
+        .priority-low { background: #6c757d; color: white; }
+
+        .task-description {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .task.completed .task-description {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .task-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #c3e6cb;
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .search-bar {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .search-bar input {
+            padding-left: 3rem;
+        }
+
+        .search-bar::before {
+            content: '🔍';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--secondary-color);
+        }
+
+        .empty-state h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 TODO API - Pau v4</h1>
+        <p>Aplicación completa de gestión de tareas con Spring Boot</p>
+    </div>
+
+    <div class="container">
+        <!-- Estadísticas -->
+        <div class="stats-grid" id="stats">
+            <div class="stat-card">
+                <h3 id="total-tasks">0</h3>
+                <p>Total Tareas</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="completed-tasks">0</h3>
+                <p>Completadas</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="pending-tasks">0</h3>
+                <p>Pendientes</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="urgent-tasks">0</h3>
+                <p>Urgentes</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="completion-percentage">0%</h3>
+                <p>Progreso</p>
+            </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+        </div>
+
+        <div class="main-content">
+            <!-- Lista de tareas -->
+            <div class="tasks-section">
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterTasks('all')">Todas</button>
+                    <button class="filter-btn" onclick="filterTasks('pending')">Pendientes</button>
+                    <button class="filter-btn" onclick="filterTasks('completed')">Completadas</button>
+                    <button class="filter-btn" onclick="filterTasks('urgent')">Urgentes</button>
+                    <button class="filter-btn" onclick="filterTasks('today')">Hoy</button>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" class="form-control" id="search-input" placeholder="Buscar tareas..." onkeyup="searchTasks()">
+                </div>
+
+                <div id="message-area"></div>
+                
+                <div id="tasks-container">
+                    <div class="loading">Cargando tareas...</div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Crear nueva tarea -->
+                <div class="card">
+                    <h3>✨ Nueva Tarea</h3>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <label for="task-description">Descripción</label>
+                            <input type="text" class="form-control" id="task-description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-priority">Prioridad</label>
+                            <select class="form-control" id="task-priority">
+                                <option value="LOW">Baja</option>
+                                <option value="MEDIUM" selected>Media</option>
+                                <option value="HIGH">Alta</option>
+                                <option value="URGENT">Urgente</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-notes">Notas (opcional)</label>
+                            <textarea class="form-control" id="task-notes" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Crear Tarea</button>
+                    </form>
+                </div>
+
+                <!-- Acciones rápidas -->
+                <div class="card">
+                    <h3>⚡ Acciones Rápidas</h3>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <button class="btn btn-success btn-sm" onclick="createSampleData()">📝 Datos de Ejemplo</button>
+                        <button class="btn btn-warning btn-sm" onclick="markAllCompleted()">✅ Completar Todas</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteCompleted()">🗑️ Eliminar Completadas</button>
+                        <a href="/h2-console" target="_blank" class="btn btn-secondary btn-sm">🗄️ Base de Datos</a>
+                    </div>
+                </div>
+
+                <!-- Resumen por prioridad -->
+                <div class="card">
+                    <h3>📊 Por Prioridad</h3>
+                    <div id="priority-stats">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>🔴 Urgente:</span>
+                            <span id="urgent-count">0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>🟡 Alta:</span>
+                            <span id="high-count">0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>🔵 Media:</span>
+                            <span id="medium-count">0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>⚪ Baja:</span>
+                            <span id="low-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar tarea -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h3>✏️ Editar Tarea</h3>
+            <form id="edit-form">
+                <input type="hidden" id="edit-task-id">
+                <div class="form-group">
+                    <label for="edit-description">Descripción</label>
+                    <input type="text" class="form-control" id="edit-description" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-priority">Prioridad</label>
+                    <select class="form-control" id="edit-priority">
+                        <option value="LOW">Baja</option>
+                        <option value="MEDIUM">Media</option>
+                        <option value="HIGH">Alta</option>
+                        <option value="URGENT">Urgente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-notes">Notas</label>
+                    <textarea class="form-control" id="edit-notes" rows="3"></textarea>
+                </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let allTasks = [];
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        // API Base URL
+        const API_BASE = '/api/tasks';
+
+        // Inicializar aplicación
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTasks();
+            loadStats();
+            
+            // Configurar formularios
+            document.getElementById('task-form').addEventListener('submit', createTask);
+            document.getElementById('edit-form').addEventListener('submit', updateTask);
+            
+            // Recargar cada 30 segundos
+            setInterval(() => {
+                loadTasks();
+                loadStats();
+            }, 30000);
+        });
+
+        // ===== FUNCIONES DE API =====
+
+        async function apiCall(endpoint, options = {}) {
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...options.headers
+                    },
+                    ...options
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    return await response.json();
+                }
+                return null;
+            } catch (error) {
+                console.error('Error en API:', error);
+                showMessage(`Error: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        async function loadTasks() {
+            try {
+                allTasks = await apiCall('');
+                displayTasks();
+                updatePriorityStats();
+            } catch (error) {
+                document.getElementById('tasks-container').innerHTML = 
+                    '<div class="error">Error al cargar las tareas</div>';
+            }
+        }
+
+        async function loadStats() {
+            try {
+                const stats = await apiCall('/stats');
+                updateStats(stats);
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        async function createTask(event) {
+            event.preventDefault();
+            
+            const task = {
+                description: document.getElementById('task-description').value,
+                priority: document.getElementById('task-priority').value,
+                notes: document.getElementById('task-notes').value || null
+            };
+
+            try {
+                await apiCall('', {
+                    method: 'POST',
+                    body: JSON.stringify(task)
+                });
+                
+                showMessage('Tarea creada exitosamente', 'success');
+                document.getElementById('task-form').reset();
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al crear la tarea', 'error');
+            }
+        }
+
+        async function updateTask(event) {
+            event.preventDefault();
+            
+            const id = document.getElementById('edit-task-id').value;
+            const task = {
+                description: document.getElementById('edit-description').value,
+                priority: document.getElementById('edit-priority').value,
+                notes: document.getElementById('edit-notes').value || null
+            };
+
+            try {
+                await apiCall(`/${id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify(task)
+                });
+                
+                showMessage('Tarea actualizada exitosamente', 'success');
+                closeEditModal();
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al actualizar la tarea', 'error');
+            }
+        }
+
+        async function toggleComplete(id, completed) {
+            try {
+                const endpoint = completed ? `/${id}/uncomplete` : `/${id}/complete`;
+                await apiCall(endpoint, { method: 'PATCH' });
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al cambiar estado de la tarea', 'error');
+            }
+        }
+
+        async function deleteTask(id) {
+            if (!confirm('¿Estás seguro de que quieres eliminar esta tarea?')) return;
+            
+            try {
+                await apiCall(`/${id}`, { method: 'DELETE' });
+                showMessage('Tarea eliminada exitosamente', 'success');
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al eliminar la tarea', 'error');
+            }
+        }
+
+        async function changePriority(id, priority) {
+            try {
+                await apiCall(`/${id}/priority?priority=${priority}`, { method: 'PATCH' });
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al cambiar prioridad', 'error');
+            }
+        }
+
+        // ===== FUNCIONES DE FILTROS =====
+
+        async function filterTasks(filter) {
+            currentFilter = filter;
+            
+            // Actualizar botones de filtro
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            try {
+                let endpoint = '';
+                switch(filter) {
+                    case 'pending':
+                        endpoint = '/pending';
+                        break;
+                    case 'completed':
+                        endpoint = '/completed';
+                        break;
+                    case 'urgent':
+                        endpoint = '/urgent';
+                        break;
+                    case 'today':
+                        endpoint = '/today';
+                        break;
+                    default:
+                        endpoint = '';
+                }
+                
+                allTasks = await apiCall(endpoint);
+                displayTasks();
+            } catch (error) {
+                console.error('Error filtering tasks:', error);
+            }
+        }
+
+        function searchTasks() {
+            searchTerm = document.getElementById('search-input').value;
+            displayTasks();
+        }
+
+        // ===== FUNCIONES DE VISUALIZACIÓN =====
+
+        function displayTasks() {
+            const container = document.getElementById('tasks-container');
+            
+            let filteredTasks = allTasks;
+            
+            // Aplicar búsqueda
+            if (searchTerm) {
+                filteredTasks = filteredTasks.filter(task => 
+                    task.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    (task.notes && task.notes.toLowerCase().includes(searchTerm.toLowerCase()))
+                );
+            }
+            
+            if (filteredTasks.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>🎯 No hay tareas</h3>
+                        <p>No se encontraron tareas que coincidan con los filtros actuales.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const tasksHtml = filteredTasks.map(task => `
+                <div class="task ${task.completed ? 'completed' : ''} priority-${task.priority.toLowerCase()}" data-id="${task.id}">
+                    <div class="task-header">
+                        <span class="task-id">ID: ${task.id}</span>
+                        <span class="task-priority priority-${task.priority.toLowerCase()}">${getPriorityDisplayName(task.priority)}</span>
+                    </div>
+                    
+                    <div class="task-description">${task.description}</div>
+                    
+                    ${task.notes ? `<div style="margin-bottom: 1rem; font-style: italic; color: #6c757d;">"${task.notes}"</div>` : ''}
+                    
+                    <div class="task-meta">
+                        <div><strong>Estado:</strong> ${task.completed ? '✅ Completada' : '⏳ Pendiente'}</div>
+                        <div><strong>Creada:</strong> ${formatDate(task.createdAt)}</div>
+                        ${task.completedAt ? `<div><strong>Completada:</strong> ${formatDate(task.completedAt)}</div>` : ''}
+                        <div><strong>Actualizada:</strong> ${formatDate(task.updatedAt)}</div>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-sm ${task.completed ? 'btn-warning' : 'btn-success'}" 
+                                onclick="toggleComplete(${task.id}, ${task.completed})">
+                            ${task.completed ? '↶ Reabrir' : '✅ Completar'}
+                        </button>
+                        <button class="btn btn-sm btn-primary" onclick="openEditModal(${task.id})">✏️ Editar</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteTask(${task.id})">🗑️ Eliminar</button>
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = tasksHtml;
+        }
+
+        function updateStats(stats) {
+            document.getElementById('total-tasks').textContent = stats.total;
+            document.getElementById('completed-tasks').textContent = stats.completed;
+            document.getElementById('pending-tasks').textContent = stats.pending;
+            document.getElementById('urgent-tasks').textContent = stats.urgent;
+            document.getElementById('completion-percentage').textContent = `${Math.round(stats.completionPercentage)}%`;
+            
+            // Actualizar barra de progreso
+            document.getElementById('progress-fill').style.width = `${stats.completionPercentage}%`;
+        }
+
+        function updatePriorityStats() {
+            const priorityCount = {
+                URGENT: 0,
+                HIGH: 0,
+                MEDIUM: 0,
+                LOW: 0
+            };
+            
+            allTasks.forEach(task => {
+                if (!task.completed) {
+                    priorityCount[task.priority]++;
+                }
+            });
+            
+            document.getElementById('urgent-count').textContent = priorityCount.URGENT;
+            document.getElementById('high-count').textContent = priorityCount.HIGH;
+            document.getElementById('medium-count').textContent = priorityCount.MEDIUM;
+            document.getElementById('low-count').textContent = priorityCount.LOW;
+        }
+
+        // ===== FUNCIONES DE ACCIONES RÁPIDAS =====
+
+        async function createSampleData() {
+            try {
+                await apiCall('/sample-data', { method: 'POST' });
+                showMessage('Datos de ejemplo creados exitosamente', 'success');
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al crear datos de ejemplo', 'error');
+            }
+        }
+
+        async function markAllCompleted() {
+            if (!confirm('¿Estás seguro de que quieres marcar todas las tareas como completadas?')) return;
+            
+            try {
+                await apiCall('/complete-all', { method: 'PATCH' });
+                showMessage('Todas las tareas marcadas como completadas', 'success');
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al completar todas las tareas', 'error');
+            }
+        }
+
+        async function deleteCompleted() {
+            if (!confirm('¿Estás seguro de que quieres eliminar todas las tareas completadas?')) return;
+            
+            try {
+                await apiCall('/completed', { method: 'DELETE' });
+                showMessage('Tareas completadas eliminadas exitosamente', 'success');
+                loadTasks();
+                loadStats();
+            } catch (error) {
+                showMessage('Error al eliminar tareas completadas', 'error');
+            }
+        }
+
+        // ===== FUNCIONES DEL MODAL =====
+
+        function openEditModal(taskId) {
+            const task = allTasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            document.getElementById('edit-task-id').value = task.id;
+            document.getElementById('edit-description').value = task.description;
+            document.getElementById('edit-priority').value = task.priority;
+            document.getElementById('edit-notes').value = task.notes || '';
+            
+            document.getElementById('edit-modal').style.display = 'block';
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+        }
+
+        // ===== FUNCIONES AUXILIARES =====
+
+        function showMessage(message, type) {
+            const messageArea = document.getElementById('message-area');
+            messageArea.innerHTML = `<div class="${type}">${message}</div>`;
+            
+            setTimeout(() => {
+                messageArea.innerHTML = '';
+            }, 5000);
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleString('es-ES', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function getPriorityDisplayName(priority) {
+            const names = {
+                LOW: 'Baja',
+                MEDIUM: 'Media',
+                HIGH: 'Alta',
+                URGENT: 'Urgente'
+            };
+            return names[priority] || priority;
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modal = document.getElementById('edit-modal');
+            if (event.target === modal) {
+                closeEditModal();
+            }
+        }
+    </script>
+</body>
+</html> 
