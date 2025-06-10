@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Spring - Gestió de Tasques</title>
+    <style>
+        /* Estils CSS globals */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Contenidor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        /* Títol principal */
+        h1 {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Targeta d'estadístiques */
+        .stats-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: rgba(255,255,255,0.8);
+            transition: width 0.3s ease;
+        }
+
+        /* Formulari */
+        .form-section {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Botons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+            color: white;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+
+        /* Filtres */
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+
+        /* Cerca */
+        .search-box {
+            margin-bottom: 25px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 16px;
+            background: #f8fafc;
+        }
+
+        /* Llista de tasques */
+        .tasks-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .task-item {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .task-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .task-item.completed {
+            background: #f0fff4;
+            border-color: #48bb78;
+            opacity: 0.8;
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .task-description {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .task-description.completed {
+            text-decoration: line-through;
+            color: #718096;
+        }
+
+        .task-priority {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-urgent {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .priority-high {
+            background: #feebc8;
+            color: #dd6b20;
+        }
+
+        .priority-medium {
+            background: #bee3f8;
+            color: #3182ce;
+        }
+
+        .priority-low {
+            background: #c6f6d5;
+            color: #38a169;
+        }
+
+        .task-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Sidebar d'accions ràpides */
+        .sidebar h3 {
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .quick-action {
+            width: 100%;
+            margin-bottom: 10px;
+            justify-content: flex-start;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            
+            .filters {
+                justify-content: center;
+            }
+            
+            .task-actions {
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        /* Indicador de càrrega */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-radius: 50%;
+            border-top-color: #667eea;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Notificacions */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            z-index: 1001;
+            animation: slideInRight 0.3s ease;
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <h1>📝 Todo List Spring</h1>
+            
+            <!-- Targeta d'estadístiques -->
+            <div class="stats-card">
+                <h3>📊 Estadístiques de Tasques</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalTasks">0</div>
+                        <div>Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="completedTasks">0</div>
+                        <div>Completades</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="pendingTasks">0</div>
+                        <div>Pendents</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="urgentTasks">0</div>
+                        <div>Urgents</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <div style="margin-top: 10px;">
+                    Progrés: <span id="progressText">0%</span>
+                </div>
+            </div>
+
+            <!-- Formulari per crear nova tasca -->
+            <div class="form-section">
+                <h3>✨ Crear Nova Tasca</h3>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="description">Descripció:</label>
+                        <input type="text" id="description" name="description" required 
+                               placeholder="Escriu la descripció de la tasca...">
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Prioritat:</label>
+                        <select id="priority" name="priority">
+                            <option value="LOW">Baixa</option>
+                            <option value="MEDIUM" selected>Mitjana</option>
+                            <option value="HIGH">Alta</option>
+                            <option value="URGENT">Urgent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes (opcional):</label>
+                        <textarea id="notes" name="notes" rows="3" 
+                                  placeholder="Afegeix notes addicionals..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        ➕ Crear Tasca
+                    </button>
+                </form>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">📋 Totes</button>
+                <button class="filter-btn" data-filter="pending">⏳ Pendents</button>
+                <button class="filter-btn" data-filter="completed">✅ Completades</button>
+                <button class="filter-btn" data-filter="urgent">🚨 Urgents</button>
+                <button class="filter-btn" data-filter="today">📅 Avui</button>
+            </div>
+
+            <!-- Caixa de cerca -->
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" 
+                       placeholder="🔍 Cercar tasques...">
+            </div>
+
+            <!-- Llista de tasques -->
+            <div id="tasksContainer" class="tasks-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div>Carregant tasques...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>⚡ Accions Ràpides</h3>
+            <button class="btn btn-success quick-action" onclick="createSampleData()">
+                📝 Crear Dades d'Exemple
+            </button>
+            <button class="btn btn-warning quick-action" onclick="markAllCompleted()">
+                ✅ Completar Totes
+            </button>
+            <button class="btn btn-danger quick-action" onclick="deleteCompletedTasks()">
+                🗑️ Eliminar Completades
+            </button>
+            <button class="btn btn-primary quick-action" onclick="refreshTasks()">
+                🔄 Actualitzar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal per editar tasca -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>✏️ Editar Tasca</h3>
+            <form id="editForm">
+                <input type="hidden" id="editTaskId">
+                <div class="form-group">
+                    <label for="editDescription">Descripció:</label>
+                    <input type="text" id="editDescription" name="description" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPriority">Prioritat:</label>
+                    <select id="editPriority" name="priority">
+                        <option value="LOW">Baixa</option>
+                        <option value="MEDIUM">Mitjana</option>
+                        <option value="HIGH">Alta</option>
+                        <option value="URGENT">Urgent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editNotes">Notes:</label>
+                    <textarea id="editNotes" name="notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    💾 Desar Canvis
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Variables globals
+        let currentFilter = 'all';
+        let tasks = [];
+        const API_BASE = '/api/tasks';
+
+        // Inicialització
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+            loadTasks();
+            setupEventListeners();
+            
+            // Actualització automàtica cada 30 segons
+            setInterval(() => {
+                loadStats();
+                loadTasks();
+            }, 30000);
+        });
+
+        // Configurar listeners d'esdeveniments
+        function setupEventListeners() {
+            // Formulari de nova tasca
+            document.getElementById('taskForm').addEventListener('submit', createTask);
+            
+            // Formulari d'edició
+            document.getElementById('editForm').addEventListener('submit', updateTask);
+            
+            // Filtres
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    loadTasks();
+                });
+            });
+            
+            // Cerca
+            document.getElementById('searchInput').addEventListener('input', handleSearch);
+            
+            // Modal
+            document.querySelector('.close').addEventListener('click', closeModal);
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('editModal');
+                if (event.target == modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Carregar estadístiques
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/stats`);
+                const stats = await response.json();
+                
+                document.getElementById('totalTasks').textContent = stats.total;
+                document.getElementById('completedTasks').textContent = stats.completed;
+                document.getElementById('pendingTasks').textContent = stats.pending;
+                document.getElementById('urgentTasks').textContent = stats.urgent;
+                
+                const percentage = stats.completionPercentage.toFixed(1);
+                document.getElementById('progressBar').style.width = `${percentage}%`;
+                document.getElementById('progressText').textContent = `${percentage}%`;
+            } catch (error) {
+                console.error('Error carregant estadístiques:', error);
+            }
+        }
+
+        // Carregar tasques
+        async function loadTasks() {
+            try {
+                let url = API_BASE;
+                
+                switch(currentFilter) {
+                    case 'pending':
+                        url += '/pending';
+                        break;
+                    case 'completed':
+                        url += '/completed';
+                        break;
+                    case 'urgent':
+                        url += '/urgent';
+                        break;
+                    case 'today':
+                        url += '/today';
+                        break;
+                }
+                
+                const response = await fetch(url);
+                tasks = await response.json();
+                renderTasks(tasks);
+            } catch (error) {
+                console.error('Error carregant tasques:', error);
+                showNotification('Error carregant tasques', 'error');
+            }
+        }
+
+        // Renderitzar tasques
+        function renderTasks(tasksToRender) {
+            const container = document.getElementById('tasksContainer');
+            
+            if (tasksToRender.length === 0) {
+                container.innerHTML = '<div class="loading">📝 No hi ha tasques per mostrar</div>';
+                return;
+            }
+            
+            container.innerHTML = tasksToRender.map(task => `
+                <div class="task-item ${task.completed ? 'completed' : ''}" onclick="editTask(${task.id})">
+                    <div class="task-header">
+                        <div class="task-description ${task.completed ? 'completed' : ''}">
+                            ${task.description}
+                        </div>
+                        <span class="task-priority priority-${task.priority.toLowerCase()}">
+                            ${getPriorityText(task.priority)}
+                        </span>
+                    </div>
+                    <div class="task-meta">
+                        <span>Creada: ${formatDate(task.createdAt)}</span>
+                        ${task.completedAt ? `<span>Completada: ${formatDate(task.completedAt)}</span>` : ''}
+                    </div>
+                    ${task.notes ? `<div style="margin-bottom: 15px; color: #718096;">${task.notes}</div>` : ''}
+                    <div class="task-actions" onclick="event.stopPropagation()">
+                        ${task.completed ? 
+                            `<button class="btn btn-warning btn-small" onclick="toggleTask(${task.id}, false)">
+                                ↩️ Marcar Pendent
+                            </button>` :
+                            `<button class="btn btn-success btn-small" onclick="toggleTask(${task.id}, true)">
+                                ✅ Completar
+                            </button>`
+                        }
+                        <button class="btn btn-danger btn-small" onclick="deleteTask(${task.id})">
+                            🗑️ Eliminar
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Crear nova tasca
+        async function createTask(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const taskData = {
+                description: formData.get('description'),
+                priority: formData.get('priority'),
+                notes: formData.get('notes') || null
+            };
+            
+            try {
+                const response = await fetch(API_BASE, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(taskData)
+                });
+                
+                if (response.ok) {
+                    event.target.reset();
+                    loadStats();
+                    loadTasks();
+                    showNotification('Tasca creada correctament', 'success');
+                } else {
+                    showNotification('Error creant la tasca', 'error');
+                }
+            } catch (error) {
+                console.error('Error creant tasca:', error);
+                showNotification('Error creant la tasca', 'error');
+            }
+        }
+
+        // Canviar estat de tasca
+        async function toggleTask(taskId, completed) {
+            try {
+                const endpoint = completed ? 'complete' : 'uncomplete';
+                const response = await fetch(`${API_BASE}/${taskId}/${endpoint}`, {
+                    method: 'PATCH'
+                });
+                
+                if (response.ok) {
+                    loadStats();
+                    loadTasks();
+                    showNotification(`Tasca ${completed ? 'completada' : 'marcada com a pendent'}`, 'success');
+                } else {
+                    showNotification('Error actualitzant la tasca', 'error');
+                }
+            } catch (error) {
+                console.error('Error actualitzant tasca:', error);
+                showNotification('Error actualitzant la tasca', 'error');
+            }
+        }
+
+        // Eliminar tasca
+        async function deleteTask(taskId) {
+            if (!confirm('Estàs segur que vols eliminar aquesta tasca?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/${taskId}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    loadStats();
+                    loadTasks();
+                    showNotification('Tasca eliminada correctament', 'success');
+                } else {
+                    showNotification('Error eliminant la tasca', 'error');
+                }
+            } catch (error) {
+                console.error('Error eliminant tasca:', error);
+                showNotification('Error eliminant la tasca', 'error');
+            }
+        }
+
+        // Editar tasca
+        function editTask(taskId) {
+            const task = tasks.find(t => t.id === taskId);
+            if (!task) return;
+            
+            document.getElementById('editTaskId').value = task.id;
+            document.getElementById('editDescription').value = task.description;
+            document.getElementById('editPriority').value = task.priority;
+            document.getElementById('editNotes').value = task.notes || '';
+            
+            document.getElementById('editModal').style.display = 'block';
+        }
+
+        // Actualitzar tasca
+        async function updateTask(event) {
+            event.preventDefault();
+            
+            const taskId = document.getElementById('editTaskId').value;
+            const formData = new FormData(event.target);
+            const taskData = {
+                description: formData.get('description'),
+                priority: formData.get('priority'),
+                notes: formData.get('notes') || null
+            };
+            
+            try {
+                const response = await fetch(`${API_BASE}/${taskId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(taskData)
+                });
+                
+                if (response.ok) {
+                    closeModal();
+                    loadStats();
+                    loadTasks();
+                    showNotification('Tasca actualitzada correctament', 'success');
+                } else {
+                    showNotification('Error actualitzant la tasca', 'error');
+                }
+            } catch (error) {
+                console.error('Error actualitzant tasca:', error);
+                showNotification('Error actualitzant la tasca', 'error');
+            }
+        }
+
+        // Cerca de tasques
+        async function handleSearch(event) {
+            const searchTerm = event.target.value.trim();
+            
+            if (searchTerm === '') {
+                loadTasks();
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/search?q=${encodeURIComponent(searchTerm)}`);
+                const searchResults = await response.json();
+                renderTasks(searchResults);
+            } catch (error) {
+                console.error('Error cercant tasques:', error);
+                showNotification('Error cercant tasques', 'error');
+            }
+        }
+
+        // Accions ràpides
+        async function createSampleData() {
+            try {
+                const response = await fetch(`${API_BASE}/sample-data`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    loadStats();
+                    loadTasks();
+                    showNotification('Dades d\'exemple creades correctament', 'success');
+                } else {
+                    showNotification('Error creant dades d\'exemple', 'error');
+                }
+            } catch (error) {
+                console.error('Error creant dades d\'exemple:', error);
+                showNotification('Error creant dades d\'exemple', 'error');
+            }
+        }
+
+        async function markAllCompleted() {
+            if (!confirm('Estàs segur que vols marcar totes les tasques com a completades?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/complete-all`, {
+                    method: 'PATCH'
+                });
+                
+                if (response.ok) {
+                    loadStats();
+                    loadTasks();
+                    showNotification('Totes les tasques marcades com a completades', 'success');
+                } else {
+                    showNotification('Error completant les tasques', 'error');
+                }
+            } catch (error) {
+                console.error('Error completant tasques:', error);
+                showNotification('Error completant les tasques', 'error');
+            }
+        }
+
+        async function deleteCompletedTasks() {
+            if (!confirm('Estàs segur que vols eliminar totes les tasques completades?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/completed`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    loadStats();
+                    loadTasks();
+                    showNotification('Tasques completades eliminades correctament', 'success');
+                } else {
+                    showNotification('Error eliminant les tasques completades', 'error');
+                }
+            } catch (error) {
+                console.error('Error eliminant tasques completades:', error);
+                showNotification('Error eliminant les tasques completades', 'error');
+            }
+        }
+
+        function refreshTasks() {
+            loadStats();
+            loadTasks();
+            showNotification('Tasques actualitzades', 'success');
+        }
+
+        // Utilitats
+        function closeModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('ca-ES', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function getPriorityText(priority) {
+            const priorities = {
+                'LOW': 'Baixa',
+                'MEDIUM': 'Mitjana',
+                'HIGH': 'Alta',
+                'URGENT': 'Urgent'
+            };
+            return priorities[priority] || priority;
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 
