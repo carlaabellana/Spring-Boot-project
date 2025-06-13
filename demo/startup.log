@@ -34,30 +34,30 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2025-06-13T17:44:23.280+02:00  INFO 13575 --- [demo] [           main] com.example.todo.ToDoApplication         : Starting ToDoApplication using Java 20.0.2 with PID 13575 (/Users/paullort/Desktop/2025/SEM 2/COLABO/Spring-Boot-project/demo/target/classes started by paullort in /Users/paullort/Desktop/2025/SEM 2/COLABO/Spring-Boot-project/demo)
-2025-06-13T17:44:23.281+02:00  INFO 13575 --- [demo] [           main] com.example.todo.ToDoApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-06-13T17:44:23.560+02:00  INFO 13575 --- [demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-13T17:44:23.582+02:00  INFO 13575 --- [demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
-2025-06-13T17:44:23.811+02:00  INFO 13575 --- [demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-13T17:44:23.817+02:00  INFO 13575 --- [demo] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-13T17:44:23.818+02:00  INFO 13575 --- [demo] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-13T17:44:23.844+02:00  INFO 13575 --- [demo] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-13T17:44:23.845+02:00  INFO 13575 --- [demo] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 545 ms
-2025-06-13T17:44:23.859+02:00  INFO 13575 --- [demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-13T17:44:23.954+02:00  INFO 13575 --- [demo] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-06-13T17:44:23.955+02:00  INFO 13575 --- [demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-13T17:44:23.960+02:00  INFO 13575 --- [demo] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2025-06-13T17:44:24.017+02:00  INFO 13575 --- [demo] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-13T17:44:24.050+02:00  INFO 13575 --- [demo] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-13T17:44:24.066+02:00  INFO 13575 --- [demo] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-13T17:44:24.181+02:00  INFO 13575 --- [demo] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-13T17:44:24.205+02:00  WARN 13575 --- [demo] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-13T17:44:24.595+02:00  INFO 13575 --- [demo] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-13T17:44:24.602+02:00 DEBUG 13575 --- [demo] [           main] org.hibernate.SQL                        : 
+2025-06-13T19:21:59.857+02:00  INFO 16735 --- [demo] [           main] com.example.todo.ToDoApplication         : Starting ToDoApplication using Java 20.0.2 with PID 16735 (/Users/paullort/Desktop/2025/SEM 2/COLABO/Spring-Boot-project/demo/target/classes started by paullort in /Users/paullort/Desktop/2025/SEM 2/COLABO/Spring-Boot-project/demo)
+2025-06-13T19:21:59.858+02:00  INFO 16735 --- [demo] [           main] com.example.todo.ToDoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-13T19:22:00.213+02:00  INFO 16735 --- [demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-13T19:22:00.237+02:00  INFO 16735 --- [demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
+2025-06-13T19:22:00.520+02:00  INFO 16735 --- [demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-13T19:22:00.529+02:00  INFO 16735 --- [demo] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-13T19:22:00.529+02:00  INFO 16735 --- [demo] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-06-13T19:22:00.558+02:00  INFO 16735 --- [demo] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-13T19:22:00.558+02:00  INFO 16735 --- [demo] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 681 ms
+2025-06-13T19:22:00.573+02:00  INFO 16735 --- [demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-13T19:22:00.676+02:00  INFO 16735 --- [demo] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-06-13T19:22:00.678+02:00  INFO 16735 --- [demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-13T19:22:00.686+02:00  INFO 16735 --- [demo] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-06-13T19:22:00.751+02:00  INFO 16735 --- [demo] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-13T19:22:00.783+02:00  INFO 16735 --- [demo] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-13T19:22:00.798+02:00  INFO 16735 --- [demo] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-13T19:22:00.913+02:00  INFO 16735 --- [demo] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-13T19:22:00.936+02:00  WARN 16735 --- [demo] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-13T19:22:01.335+02:00  INFO 16735 --- [demo] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-13T19:22:01.342+02:00 DEBUG 16735 --- [demo] [           main] org.hibernate.SQL                        : 
     drop table if exists tasks cascade 
 Hibernate: 
     drop table if exists tasks cascade 
-2025-06-13T17:44:24.606+02:00 DEBUG 13575 --- [demo] [           main] org.hibernate.SQL                        : 
+2025-06-13T19:22:01.345+02:00 DEBUG 16735 --- [demo] [           main] org.hibernate.SQL                        : 
     create table tasks (
         completed boolean not null,
         completed_at timestamp(6),
@@ -81,29 +81,133 @@ Hibernate:
         priority varchar(255) not null check (priority in ('LOW','MEDIUM','HIGH','URGENT')),
         primary key (id)
     )
-2025-06-13T17:44:24.612+02:00  INFO 13575 --- [demo] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-13T17:44:24.747+02:00  INFO 13575 --- [demo] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-13T17:44:24.986+02:00  WARN 13575 --- [demo] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-13T17:44:24.998+02:00  INFO 13575 --- [demo] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2025-06-13T17:44:25.034+02:00 DEBUG 13575 --- [demo] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 23 mappings in 'requestMappingHandlerMapping'
-2025-06-13T17:44:25.072+02:00 DEBUG 13575 --- [demo] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-06-13T17:44:25.087+02:00 DEBUG 13575 --- [demo] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-06-13T17:44:25.103+02:00 DEBUG 13575 --- [demo] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-06-13T17:44:25.118+02:00  WARN 13575 --- [demo] [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2025-06-13T17:44:25.167+02:00  INFO 13575 --- [demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2025-06-13T17:44:25.172+02:00  INFO 13575 --- [demo] [           main] com.example.todo.ToDoApplication         : Started ToDoApplication in 2.057 seconds (process running for 2.207)
-2025-06-13T17:44:36.703+02:00  INFO 13575 --- [demo] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-13T17:44:36.703+02:00  INFO 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-13T17:44:36.704+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2025-06-13T17:44:36.704+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2025-06-13T17:44:36.704+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2025-06-13T17:44:36.706+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2a03b87
-2025-06-13T17:44:36.706+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@45fdd38d
-2025-06-13T17:44:36.707+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2025-06-13T17:44:36.707+02:00  INFO 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-06-13T17:44:36.712+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/health", parameters={}
-2025-06-13T17:44:36.718+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#healthCheck()
-2025-06-13T17:44:36.787+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
+2025-06-13T19:22:01.353+02:00  INFO 16735 --- [demo] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-13T19:22:01.491+02:00  INFO 16735 --- [demo] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-13T19:22:01.748+02:00  WARN 16735 --- [demo] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-13T19:22:01.759+02:00  INFO 16735 --- [demo] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-13T19:22:01.793+02:00 DEBUG 16735 --- [demo] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2025-06-13T19:22:01.828+02:00 DEBUG 16735 --- [demo] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-06-13T19:22:01.842+02:00 DEBUG 16735 --- [demo] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-06-13T19:22:01.858+02:00 DEBUG 16735 --- [demo] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-06-13T19:22:01.874+02:00  WARN 16735 --- [demo] [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-06-13T19:22:01.930+02:00  INFO 16735 --- [demo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-06-13T19:22:01.935+02:00  INFO 16735 --- [demo] [           main] com.example.todo.ToDoApplication         : Started ToDoApplication in 2.243 seconds (process running for 2.394)
+2025-06-13T19:22:11.977+02:00  INFO 16735 --- [demo] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-13T19:22:11.978+02:00  INFO 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-13T19:22:11.978+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-06-13T19:22:11.978+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-06-13T19:22:11.978+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-06-13T19:22:11.979+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@346d441a
+2025-06-13T19:22:11.980+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7fbe0f64
+2025-06-13T19:22:11.980+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-06-13T19:22:11.980+02:00  INFO 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-13T19:22:11.988+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
+2025-06-13T19:22:11.988+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
+2025-06-13T19:22:11.998+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
+2025-06-13T19:22:11.998+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
+2025-06-13T19:22:12.050+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        tasks t1_0
+2025-06-13T19:22:12.050+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.completed,
+        t1_0.completed_at,
+        t1_0.created_at,
+        t1_0.description,
+        t1_0.notes,
+        t1_0.priority,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        tasks t1_0
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.completed,
+        t1_0.completed_at,
+        t1_0.created_at,
+        t1_0.description,
+        t1_0.notes,
+        t1_0.priority,
+        t1_0.updated_at 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+2025-06-13T19:22:12.072+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+2025-06-13T19:22:12.074+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+2025-06-13T19:22:12.076+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+2025-06-13T19:22:12.076+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+2025-06-13T19:22:12.080+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:12.081+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2025-06-13T19:22:12.089+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:12.090+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:12.090+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@d356b52]
+2025-06-13T19:22:12.092+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:12.599+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/health", parameters={}
+2025-06-13T19:22:12.601+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#healthCheck()
+2025-06-13T19:22:12.640+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
     select
         t1_0.id,
         t1_0.completed,
@@ -127,12 +231,127 @@ Hibernate:
         t1_0.updated_at 
     from
         tasks t1_0
-2025-06-13T17:44:36.819+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:44:36.820+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{totalTasks=0, message=API TODO funcionant correctament, status=UP, timestamp=1749829476733}]
-2025-06-13T17:44:36.831+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:45:03.082+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/tasks/sample", parameters={}
-2025-06-13T17:45:03.084+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#createSampleTasks()
-2025-06-13T17:45:03.161+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-06-13T19:22:12.682+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:12.682+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{totalTasks=0, message=API TODO funcionant correctament, status=UP, timestamp=1749835332607}]
+2025-06-13T19:22:12.691+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:14.210+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2025-06-13T19:22:14.221+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-06-13T19:22:14.221+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : View [InternalResourceView], model {}
+2025-06-13T19:22:14.223+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2025-06-13T19:22:14.226+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2025-06-13T19:22:14.228+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-06-13T19:22:14.233+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2025-06-13T19:22:14.233+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:14.352+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/css/styles.css", parameters={}
+2025-06-13T19:22:14.352+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/js/app.js", parameters={}
+2025-06-13T19:22:14.353+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-06-13T19:22:14.353+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-06-13T19:22:14.354+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 304 NOT_MODIFIED
+2025-06-13T19:22:14.354+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:14.392+02:00 DEBUG 16735 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
+2025-06-13T19:22:14.392+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
+2025-06-13T19:22:14.392+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
+2025-06-13T19:22:14.392+02:00 DEBUG 16735 --- [demo] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
+2025-06-13T19:22:14.397+02:00 DEBUG 16735 --- [demo] [io-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.completed,
+        t1_0.completed_at,
+        t1_0.created_at,
+        t1_0.description,
+        t1_0.notes,
+        t1_0.priority,
+        t1_0.updated_at 
+    from
+        tasks t1_0
+2025-06-13T19:22:14.398+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        tasks t1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        tasks t1_0
+Hibernate: 
+    select
+        t1_0.id,
+        t1_0.completed,
+        t1_0.completed_at,
+        t1_0.created_at,
+        t1_0.description,
+        t1_0.notes,
+        t1_0.priority,
+        t1_0.updated_at 
+    from
+        tasks t1_0
+2025-06-13T19:22:14.401+02:00 DEBUG 16735 --- [demo] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:14.402+02:00 DEBUG 16735 --- [demo] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2025-06-13T19:22:14.411+02:00 DEBUG 16735 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:14.416+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+2025-06-13T19:22:14.421+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.completed=?
+2025-06-13T19:22:14.423+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+2025-06-13T19:22:14.425+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+Hibernate: 
+    select
+        count(t1_0.id) 
+    from
+        tasks t1_0 
+    where
+        t1_0.priority=?
+2025-06-13T19:22:14.427+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:14.427+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@12f5669c]
+2025-06-13T19:22:14.429+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:22.078+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/tasks", parameters={}
+2025-06-13T19:22:22.080+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#createTask(Task)
+2025-06-13T19:22:22.138+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Task{id=null, description='Carla Yang bo', completed=false, priority=MEDIUM, createdAt=null}]
+2025-06-13T19:22:22.206+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
     insert 
     into
         tasks
@@ -146,82 +365,14 @@ Hibernate:
         (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
     values
         (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:45:03.174+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:45:03.175+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:45:03.175+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:45:03.176+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:45:03.176+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:45:03.187+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:45:03.189+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=false, priority=HIGH, createdAt=2025-06-13 (truncated)...]
-2025-06-13T17:45:03.205+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-06-13T17:45:15.024+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:45:15.026+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:45:15.051+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-06-13T19:22:22.218+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:22.218+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Task{id=1, description='Carla Yang bo', completed=false, priority=MEDIUM, createdAt=2025-06-13T19:22 (truncated)...]
+2025-06-13T19:22:22.219+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2025-06-13T19:22:22.223+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
+2025-06-13T19:22:22.223+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
+2025-06-13T19:22:22.223+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
+2025-06-13T19:22:22.223+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
+2025-06-13T19:22:22.224+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         count(*) 
     from
@@ -231,159 +382,7 @@ Hibernate:
         count(*) 
     from
         tasks t1_0
-2025-06-13T17:45:15.068+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:45:15.072+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:45:15.074+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:45:15.076+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:45:15.082+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:45:15.082+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@44dde87e]
-2025-06-13T17:45:15.085+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:45:33.966+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : PATCH "/api/tasks/1/complete", parameters={}
-2025-06-13T17:45:33.969+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#completeTask(Long)
-2025-06-13T17:45:34.010+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.id=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.id=?
-2025-06-13T17:45:34.024+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    update
-        tasks 
-    set
-        completed=?,
-        completed_at=?,
-        description=?,
-        notes=?,
-        priority=?,
-        updated_at=? 
-    where
-        id=?
-Hibernate: 
-    update
-        tasks 
-    set
-        completed=?,
-        completed_at=?,
-        description=?,
-        notes=?,
-        priority=?,
-        updated_at=? 
-    where
-        id=?
-2025-06-13T17:45:34.029+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:45:34.029+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T1 (truncated)...]
-2025-06-13T17:45:34.030+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:45:40.604+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2025-06-13T17:45:40.612+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2025-06-13T17:45:40.612+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : View [InternalResourceView], model {}
-2025-06-13T17:45:40.615+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
-2025-06-13T17:45:40.618+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
-2025-06-13T17:45:40.619+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-06-13T17:45:40.622+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
-2025-06-13T17:45:40.623+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:02.041+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2025-06-13T17:46:02.047+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
-2025-06-13T17:46:02.047+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : View [InternalResourceView], model {}
-2025-06-13T17:46:02.047+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
-2025-06-13T17:46:02.047+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
-2025-06-13T17:46:02.048+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-06-13T17:46:02.053+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
-2025-06-13T17:46:02.054+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:02.118+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/js/app.js", parameters={}
-2025-06-13T17:46:02.118+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-06-13T17:46:02.119+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/css/styles.css", parameters={}
-2025-06-13T17:46:02.120+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-06-13T17:46:02.123+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:02.123+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:02.249+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:46:02.249+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:46:02.249+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:46:02.250+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:46:02.271+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:46:02.273+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
+2025-06-13T19:22:22.224+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
     select
         t1_0.id,
         t1_0.completed,
@@ -407,7 +406,7 @@ Hibernate:
         t1_0.updated_at 
     from
         tasks t1_0
-2025-06-13T17:46:02.279+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-06-13T19:22:22.225+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         count(t1_0.id) 
     from
@@ -421,7 +420,7 @@ Hibernate:
         tasks t1_0 
     where
         t1_0.completed=?
-2025-06-13T17:46:02.280+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-06-13T19:22:22.225+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         count(t1_0.id) 
     from
@@ -435,7 +434,7 @@ Hibernate:
         tasks t1_0 
     where
         t1_0.completed=?
-2025-06-13T17:46:02.281+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-06-13T19:22:22.226+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         count(t1_0.id) 
     from
@@ -449,8 +448,7 @@ Hibernate:
         tasks t1_0 
     where
         t1_0.priority=?
-2025-06-13T17:46:02.282+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:02.282+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-06-13T19:22:22.226+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         count(t1_0.id) 
     from
@@ -464,1131 +462,17 @@ Hibernate:
         tasks t1_0 
     where
         t1_0.priority=?
-2025-06-13T17:46:02.283+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:02.283+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:02.283+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@69c80b32]
-2025-06-13T17:46:02.284+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:02.284+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:14.166+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/tasks", parameters={}
-2025-06-13T17:46:14.168+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#createTask(Task)
-2025-06-13T17:46:14.222+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Task{id=null, description='Hola', completed=false, priority=MEDIUM, createdAt=null}]
-2025-06-13T17:46:14.236+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:46:14.238+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:14.239+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Task{id=7, description='Hola', completed=false, priority=MEDIUM, createdAt=2025-06-13T17:46:14.23598 (truncated)...]
-2025-06-13T17:46:14.239+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-06-13T17:46:14.242+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:46:14.242+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:46:14.243+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:46:14.243+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:46:14.244+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:46:14.245+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-2025-06-13T17:46:14.246+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:14.247+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:14.247+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:14.247+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:14.247+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:14.247+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:14.248+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:14.249+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:14.249+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@1b1e7171]
-2025-06-13T17:46:14.250+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:28.671+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/tasks", parameters={}
-2025-06-13T17:46:28.673+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#createTask(Task)
-2025-06-13T17:46:28.680+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Task{id=null, description='TASCA PER LEDUAR', completed=false, priority=URGENT, createdAt=null}]
-2025-06-13T17:46:28.686+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:46:28.691+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:28.692+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Task{id=8, description='TASCA PER LEDUAR', completed=false, priority=URGENT, createdAt=2025-06-13T17 (truncated)...]
-2025-06-13T17:46:28.707+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-06-13T17:46:28.712+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:46:28.712+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:46:28.712+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:46:28.713+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:46:28.716+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:46:28.717+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-2025-06-13T17:46:28.720+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:28.722+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:28.722+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:28.722+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:28.724+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:28.726+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:28.728+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:28.729+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:28.729+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@175a9748]
-2025-06-13T17:46:28.729+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:32.250+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:46:32.250+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:46:32.250+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:46:32.250+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:46:32.251+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:46:32.252+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-2025-06-13T17:46:32.253+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:32.255+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:32.256+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:32.256+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:32.258+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:32.258+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:32.261+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:32.262+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:32.262+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@1ee85a6d]
-2025-06-13T17:46:32.263+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:41.905+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
-2025-06-13T17:46:41.905+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
-2025-06-13T17:46:41.913+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:41.916+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:41.917+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=2, description='Crear API REST completa', completed=false, priority=URGENT, createdAt=2025- (truncated)...]
-2025-06-13T17:46:41.918+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:48.363+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/completed", parameters={}
-2025-06-13T17:46:48.366+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getCompletedTasks()
-2025-06-13T17:46:48.377+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:48.382+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:48.383+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:48.385+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:49.755+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
-2025-06-13T17:46:49.755+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
-2025-06-13T17:46:49.757+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:49.760+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:49.760+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=2, description='Crear API REST completa', completed=false, priority=URGENT, createdAt=2025- (truncated)...]
-2025-06-13T17:46:49.761+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:51.804+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : PATCH "/api/tasks/2/complete", parameters={}
-2025-06-13T17:46:51.805+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#completeTask(Long)
-2025-06-13T17:46:51.807+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.id=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.id=?
-2025-06-13T17:46:51.811+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] org.hibernate.SQL                        : 
-    update
-        tasks 
-    set
-        completed=?,
-        completed_at=?,
-        description=?,
-        notes=?,
-        priority=?,
-        updated_at=? 
-    where
-        id=?
-Hibernate: 
-    update
-        tasks 
-    set
-        completed=?,
-        completed_at=?,
-        description=?,
-        notes=?,
-        priority=?,
-        updated_at=? 
-    where
-        id=?
-2025-06-13T17:46:51.814+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:51.814+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Task{id=2, description='Crear API REST completa', completed=true, priority=URGENT, createdAt=2025-06 (truncated)...]
-2025-06-13T17:46:51.815+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:51.819+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:46:51.819+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
-2025-06-13T17:46:51.819+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:46:51.819+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
-2025-06-13T17:46:51.821+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:46:51.822+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:51.823+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:51.824+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:51.825+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:51.825+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=3, description='Escriure documentació', completed=false, priority=MEDIUM, createdAt=2025-06 (truncated)...]
-2025-06-13T17:46:51.825+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:51.826+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:51.827+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:46:51.828+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:51.828+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@13a83a39]
-2025-06-13T17:46:51.829+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:53.637+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/completed", parameters={}
-2025-06-13T17:46:53.638+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getCompletedTasks()
-2025-06-13T17:46:53.640+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:46:53.643+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:53.643+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:53.646+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:46:56.654+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:46:56.655+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:46:56.658+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-2025-06-13T17:46:56.661+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:46:56.662+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:46:56.663+02:00 DEBUG 13575 --- [demo] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:02.253+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:47:02.253+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:47:02.254+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:47:02.254+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:47:02.256+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:47:02.257+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-2025-06-13T17:47:02.258+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:02.260+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:02.261+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:02.262+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:47:02.262+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:47:02.263+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:47:02.264+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:02.264+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:02.265+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@632580c2]
-2025-06-13T17:47:02.265+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:03.920+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/tasks", parameters={}
-2025-06-13T17:47:03.921+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#createTask(Task)
-2025-06-13T17:47:03.923+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Task{id=null, description='Carla Yang bo', completed=false, priority=URGENT, createdAt=null}]
-2025-06-13T17:47:03.925+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        tasks
-        (completed, completed_at, created_at, description, notes, priority, updated_at, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, default)
-2025-06-13T17:47:03.927+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:03.928+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Task{id=9, description='Carla Yang bo', completed=false, priority=URGENT, createdAt=2025-06-13T17:47 (truncated)...]
-2025-06-13T17:47:03.929+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
-2025-06-13T17:47:03.932+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks", parameters={}
-2025-06-13T17:47:03.932+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:47:03.933+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getAllTasks()
-2025-06-13T17:47:03.933+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:47:03.934+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:47:03.934+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0
-2025-06-13T17:47:03.935+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:03.937+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:03.938+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:03.939+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Estudiar Spring Boot', completed=true, priority=HIGH, createdAt=2025-06-13T (truncated)...]
-2025-06-13T17:47:03.939+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:47:03.940+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:03.942+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:47:03.943+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:03.943+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@4b8a19bc]
-2025-06-13T17:47:03.944+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:06.320+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
-2025-06-13T17:47:06.320+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
-2025-06-13T17:47:06.322+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:06.325+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:06.326+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=3, description='Escriure documentació', completed=false, priority=MEDIUM, createdAt=2025-06 (truncated)...]
-2025-06-13T17:47:06.327+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:32.260+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:47:32.260+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
-2025-06-13T17:47:32.262+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:47:32.262+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
-2025-06-13T17:47:32.268+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:47:32.270+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:32.271+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:32.272+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:47:32.273+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:47:32.274+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:47:32.274+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:32.274+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=3, description='Escriure documentació', completed=false, priority=MEDIUM, createdAt=2025-06 (truncated)...]
-2025-06-13T17:47:32.274+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:47:32.275+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@27e25c50]
-2025-06-13T17:47:32.276+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:47:32.276+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:48:02.277+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/stats", parameters={}
-2025-06-13T17:48:02.277+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/tasks/pending", parameters={}
-2025-06-13T17:48:02.286+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getPendingTasks()
-2025-06-13T17:48:02.286+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.todo.TaskController#getTaskStats()
-2025-06-13T17:48:02.294+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(*) 
-    from
-        tasks t1_0
-Hibernate: 
-    select
-        count(*) 
-    from
-        tasks t1_0
-2025-06-13T17:48:02.297+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] org.hibernate.SQL                        : 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        t1_0.id,
-        t1_0.completed,
-        t1_0.completed_at,
-        t1_0.created_at,
-        t1_0.description,
-        t1_0.notes,
-        t1_0.priority,
-        t1_0.updated_at 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:48:02.297+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:48:02.298+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.completed=?
-2025-06-13T17:48:02.300+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:48:02.301+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-Hibernate: 
-    select
-        count(t1_0.id) 
-    from
-        tasks t1_0 
-    where
-        t1_0.priority=?
-2025-06-13T17:48:02.302+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:48:02.302+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-06-13T17:48:02.302+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@4c184601]
-2025-06-13T17:48:02.302+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=3, description='Escriure documentació', completed=false, priority=MEDIUM, createdAt=2025-06 (truncated)...]
-2025-06-13T17:48:02.304+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2025-06-13T17:48:02.304+02:00 DEBUG 13575 --- [demo] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:22.227+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:22.227+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.todo.TaskService$TaskStats@21df546e]
+2025-06-13T19:22:22.227+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T19:22:22.227+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[Task{id=1, description='Carla Yang bo', completed=false, priority=MEDIUM, createdAt=2025-06-13T19:2 (truncated)...]
+2025-06-13T19:22:22.227+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:22.227+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T19:22:27.623+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2025-06-13T19:22:27.637+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2025-06-13T19:22:27.637+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.w.servlet.view.InternalResourceView  : View [InternalResourceView], model {}
+2025-06-13T19:22:27.638+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [index.html]
+2025-06-13T19:22:27.638+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "FORWARD" dispatch for GET "/index.html", parameters={}
+2025-06-13T19:22:27.640+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-06-13T19:22:27.644+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "FORWARD" dispatch, status 200
+2025-06-13T19:22:27.645+02:00 DEBUG 16735 --- [demo] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

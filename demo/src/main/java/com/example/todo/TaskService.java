@@ -167,19 +167,6 @@ public class TaskService {
         taskRepository.deleteAll(completedTasks);
     }
     
-    public List<Task> createSampleTasks() {
-        List<Task> sampleTasks = List.of(
-            new Task("Estudiar Spring Boot", Task.Priority.HIGH),
-            new Task("Crear API REST completa", Task.Priority.URGENT),
-            new Task("Escriure documentació", Task.Priority.MEDIUM),
-            new Task("Fer tests unitaris", Task.Priority.HIGH),
-            new Task("Revisar codi", Task.Priority.LOW),
-            new Task("Desplegar aplicació", Task.Priority.MEDIUM)
-        );
-        
-        return taskRepository.saveAll(sampleTasks);
-    }
-    
     // Classe interna per a estadístiques
     public static class TaskStats {
         private final long total;
