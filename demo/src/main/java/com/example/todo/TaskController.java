@@ -170,7 +170,59 @@ public class TaskController {
         return ResponseEntity.ok(recentTasks);
     }
 
+    // Endpoint d'estadístiques
+
+    @GetMapping("/stats")
+    public ResponseEntity<TaskService.TaskStats> getTaskStats() {
+        TaskService.TaskStats stats = taskService.getTaskStats();
+        return ResponseEntity.ok(stats);
+    }
+
+    // Endpoints d'operacions en lot
+
+    @PatchMapping("/complete-all")
+    public ResponseEntity<Map<String, String>> markAllAsCompleted() {
+        taskService.markAllAsCompleted();
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Totes les tasques pendents han estat marcades com a completades");
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/completed")
+    public ResponseEntity<Map<String, String>> deleteCompletedTasks() {
+        taskService.deleteCompletedTasks();
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Totes les tasques completades han estat eliminades");
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/sample")
+    public ResponseEntity<List<Task>> createSampleTasks() {
+        List<Task> sampleTasks = taskService.createSampleTasks();
+        return ResponseEntity.status(HttpStatus.CREATED).body(sampleTasks);
+    }
+
+    // Endpoint de salut de l'API
+
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, Object>> healthCheck() {
+        Map<String, Object> health = new HashMap<>();
+        health.put("status", "UP");
+        health.put("message", "API TODO funcionant correctament");
+        health.put("timestamp", System.currentTimeMillis());
+        health.put("totalTasks", taskService.getAllTasks().size());
+        return ResponseEntity.ok(health);
+    }
+
     // Gestió global d'errors
+
+    @ExceptionHandler(TaskService.TaskNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleTaskNotFound(TaskService.TaskNotFoundException e) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "Tasca no trobada");
+        error.put("message", e.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException e) {
@@ -179,7 +231,7 @@ public class TaskController {
         error.put("message", e.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
-    
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleGenericError(Exception e) {
         Map<String, String> error = new HashMap<>();
