@@ -29,16 +29,14 @@ public class TaskController {
         List<Task> tasks = taskService.getAllTasks();
         return ResponseEntity.ok(tasks);
     }
-
-    // Consultar tasca per id
+    
     @GetMapping("/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
         return taskService.getTaskById(id)
                 .map(task -> ResponseEntity.ok(task))
                 .orElse(ResponseEntity.notFound().build());
     }
-
-    // Crear tasca
+    
     @PostMapping
     public ResponseEntity<Task> createTask(@Valid @RequestBody Task task) {
         try {
@@ -48,8 +46,7 @@ public class TaskController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    // Actualitzar tasca
+    
     @PutMapping("/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable Long id, @Valid @RequestBody Task task) {
         try {
@@ -61,8 +58,7 @@ public class TaskController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    // Eliminar tasca
+    
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         try {
@@ -84,8 +80,7 @@ public class TaskController {
             return ResponseEntity.notFound().build();
         }
     }
-
-    // Desmarcar tasca com a completada
+    
     @PatchMapping("/{id}/uncomplete")
     public ResponseEntity<Task> uncompleteTask(@PathVariable Long id) {
         try {
@@ -95,8 +90,7 @@ public class TaskController {
             return ResponseEntity.notFound().build();
         }
     }
-
-    // Canviar prioritat
+    
     @PatchMapping("/{id}/priority")
     public ResponseEntity<Task> changePriority(@PathVariable Long id, @RequestBody Map<String, String> request) {
         try {
@@ -122,15 +116,13 @@ public class TaskController {
         List<Task> pendingTasks = taskService.getPendingTasks();
         return ResponseEntity.ok(pendingTasks);
     }
-
-    // Tasques completades
+    
     @GetMapping("/completed")
     public ResponseEntity<List<Task>> getCompletedTasks() {
         List<Task> completedTasks = taskService.getCompletedTasks();
         return ResponseEntity.ok(completedTasks);
     }
-
-    // Tasques per prioritat
+    
     @GetMapping("/priority/{priority}")
     public ResponseEntity<List<Task>> getTasksByPriority(@PathVariable String priority) {
         try {
@@ -141,8 +133,7 @@ public class TaskController {
             return ResponseEntity.badRequest().build();
         }
     }
-
-    // Cerca de tasques
+    
     @GetMapping("/search")
     public ResponseEntity<List<Task>> searchTasks(@RequestParam String q) {
         if (q == null || q.trim().isEmpty()) {
@@ -151,29 +142,25 @@ public class TaskController {
         List<Task> tasks = taskService.searchTasksByDescription(q);
         return ResponseEntity.ok(tasks);
     }
-
-    // Tasques pendents per prioritat
+    
     @GetMapping("/pending/by-priority")
     public ResponseEntity<List<Task>> getPendingTasksByPriority() {
         List<Task> tasks = taskService.getPendingTasksByPriority();
         return ResponseEntity.ok(tasks);
     }
-
-    // Tasques urgents
+    
     @GetMapping("/urgent")
     public ResponseEntity<List<Task>> getUrgentTasks() {
         List<Task> urgentTasks = taskService.getUrgentTasks();
         return ResponseEntity.ok(urgentTasks);
     }
-
-    // Tasques creades avui
+    
     @GetMapping("/today")
     public ResponseEntity<List<Task>> getTasksCreatedToday() {
         List<Task> todayTasks = taskService.getTasksCreatedToday();
         return ResponseEntity.ok(todayTasks);
     }
-
-    // Tasques recentment completades
+    
     @GetMapping("/recently-completed")
     public ResponseEntity<List<Task>> getRecentlyCompleted(@RequestParam(defaultValue = "7") int days) {
         if (days < 1 || days > 365) {
@@ -192,75 +179,12 @@ public class TaskController {
         error.put("message", e.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
-
-    // Error general
+    
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleGenericError(Exception e) {
         Map<String, String> error = new HashMap<>();
         error.put("error", "Error intern del servidor");
         error.put("message", "S'ha produït un error inesperat");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-    }
-
-    // Estatístiques de tasques
-    @GetMapping("/stats")
-    public ResponseEntity<TaskService.TaskStats> getTaskStats() {
-        TaskService.TaskStats stats = taskService.getTaskStats();
-        return ResponseEntity.ok(stats);
-    }
-
-    // Marcar totes les tasques com a completades
-    @PatchMapping("/complete-all")
-    public ResponseEntity<Void> markAllAsCompleted() {
-        taskService.markAllAsCompleted();
-        return ResponseEntity.ok().build();
-    }
-
-    // Eliminar totes les tasques completades
-    @DeleteMapping("/completed")
-    public ResponseEntity<Void> deleteCompletedTasks() {
-        taskService.deleteCompletedTasks();
-        return ResponseEntity.noContent().build();
-    }
-
-    // Crear dades d'exemple
-    @PostMapping("/sample-data")
-    public ResponseEntity<List<Task>> createSampleTasks() {
-        List<Task> sampleTasks = taskService.createSampleTasks();
-        return ResponseEntity.status(HttpStatus.CREATED).body(sampleTasks);
-    }
-
-    // Gestió d'errors
-
-    @ExceptionHandler(TaskService.TaskNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleTaskNotFound(TaskService.TaskNotFoundException e) {
-        ErrorResponse error = new ErrorResponse("TASK_NOT_FOUND", e.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
-    }
-
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<ErrorResponse> handleBadRequest(IllegalArgumentException e) {
-        ErrorResponse error = new ErrorResponse("BAD_REQUEST", e.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
-    }
-
-    // Classe per a respostes d'error
-    public static class ErrorResponse {
-        private String code;
-        private String message;
-
-        public ErrorResponse(String code, String message) {
-            this.code = code;
-            this.message = message;
-        }
-
-        // Getters
-        public String getCode() {
-            return code;
-        }
-
-        public String getMessage() {
-            return message;
-        }
     }
 }
