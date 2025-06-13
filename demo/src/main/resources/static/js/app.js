@@ -283,25 +283,6 @@ async function handleSearch(event) {
 }
 
 // Accions ràpides
-async function createSampleData() {
-    try {
-        const response = await fetch(`${API_BASE}/sample-data`, {
-            method: 'POST'
-        });
-
-        if (response.ok) {
-            loadStats();
-            loadTasks();
-            showNotification('Dades d\'exemple creades correctament', 'success');
-        } else {
-            showNotification('Error creant dades d\'exemple', 'error');
-        }
-    } catch (error) {
-        console.error('Error creant dades d\'exemple:', error);
-        showNotification('Error creant dades d\'exemple', 'error');
-    }
-}
-
 async function markAllCompleted() {
     if (!confirm('Estàs segur que vols marcar totes les tasques com a completades?')) {
         return;

@@ -196,12 +196,6 @@ public class TaskController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/sample")
-    public ResponseEntity<List<Task>> createSampleTasks() {
-        List<Task> sampleTasks = taskService.createSampleTasks();
-        return ResponseEntity.status(HttpStatus.CREATED).body(sampleTasks);
-    }
-
     // Endpoint de salut de l'API
 
     @GetMapping("/health")
