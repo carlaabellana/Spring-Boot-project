@@ -30,6 +30,7 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    // Consultar tasca per id
     @GetMapping("/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
         return taskService.getTaskById(id)
@@ -37,6 +38,7 @@ public class TaskController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // Crear tasca
     @PostMapping
     public ResponseEntity<Task> createTask(@Valid @RequestBody Task task) {
         try {
@@ -47,6 +49,7 @@ public class TaskController {
         }
     }
 
+    // Actualitzar tasca
     @PutMapping("/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable Long id, @Valid @RequestBody Task task) {
         try {
@@ -59,6 +62,7 @@ public class TaskController {
         }
     }
 
+    // Eliminar tasca
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         try {
@@ -81,6 +85,7 @@ public class TaskController {
         }
     }
 
+    // Desmarcar tasca com a completada
     @PatchMapping("/{id}/uncomplete")
     public ResponseEntity<Task> uncompleteTask(@PathVariable Long id) {
         try {
@@ -91,6 +96,7 @@ public class TaskController {
         }
     }
 
+    // Canviar prioritat
     @PatchMapping("/{id}/priority")
     public ResponseEntity<Task> changePriority(@PathVariable Long id, @RequestBody Map<String, String> request) {
         try {
@@ -117,12 +123,14 @@ public class TaskController {
         return ResponseEntity.ok(pendingTasks);
     }
 
+    // Tasques completades
     @GetMapping("/completed")
     public ResponseEntity<List<Task>> getCompletedTasks() {
         List<Task> completedTasks = taskService.getCompletedTasks();
         return ResponseEntity.ok(completedTasks);
     }
 
+    // Tasques per prioritat
     @GetMapping("/priority/{priority}")
     public ResponseEntity<List<Task>> getTasksByPriority(@PathVariable String priority) {
         try {
@@ -134,6 +142,7 @@ public class TaskController {
         }
     }
 
+    // Cerca de tasques
     @GetMapping("/search")
     public ResponseEntity<List<Task>> searchTasks(@RequestParam String q) {
         if (q == null || q.trim().isEmpty()) {
@@ -143,24 +152,28 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
+    // Tasques pendents per prioritat
     @GetMapping("/pending/by-priority")
     public ResponseEntity<List<Task>> getPendingTasksByPriority() {
         List<Task> tasks = taskService.getPendingTasksByPriority();
         return ResponseEntity.ok(tasks);
     }
 
+    // Tasques urgents
     @GetMapping("/urgent")
     public ResponseEntity<List<Task>> getUrgentTasks() {
         List<Task> urgentTasks = taskService.getUrgentTasks();
         return ResponseEntity.ok(urgentTasks);
     }
 
+    // Tasques creades avui
     @GetMapping("/today")
     public ResponseEntity<List<Task>> getTasksCreatedToday() {
         List<Task> todayTasks = taskService.getTasksCreatedToday();
         return ResponseEntity.ok(todayTasks);
     }
 
+    // Tasques recentment completades
     @GetMapping("/recently-completed")
     public ResponseEntity<List<Task>> getRecentlyCompleted(@RequestParam(defaultValue = "7") int days) {
         if (days < 1 || days > 365) {
@@ -180,6 +193,7 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
+    // Error general
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleGenericError(Exception e) {
         Map<String, String> error = new HashMap<>();
@@ -188,29 +202,35 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
 
+    // Estatístiques de tasques
     @GetMapping("/stats")
     public ResponseEntity<TaskService.TaskStats> getTaskStats() {
         TaskService.TaskStats stats = taskService.getTaskStats();
         return ResponseEntity.ok(stats);
     }
 
+    // Marcar totes les tasques com a completades
     @PatchMapping("/complete-all")
     public ResponseEntity<Void> markAllAsCompleted() {
         taskService.markAllAsCompleted();
         return ResponseEntity.ok().build();
     }
 
+    // Eliminar totes les tasques completades
     @DeleteMapping("/completed")
     public ResponseEntity<Void> deleteCompletedTasks() {
         taskService.deleteCompletedTasks();
         return ResponseEntity.noContent().build();
     }
 
+    // Crear dades d'exemple
     @PostMapping("/sample-data")
     public ResponseEntity<List<Task>> createSampleTasks() {
         List<Task> sampleTasks = taskService.createSampleTasks();
         return ResponseEntity.status(HttpStatus.CREATED).body(sampleTasks);
     }
+
+    // Gestió d'errors
 
     @ExceptionHandler(TaskService.TaskNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleTaskNotFound(TaskService.TaskNotFoundException e) {
