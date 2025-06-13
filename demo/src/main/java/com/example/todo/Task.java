@@ -8,32 +8,32 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "tasks")
 public class Task {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @NotBlank(message = "La descripció no pot estar buida")
     @Size(min = 1, max = 255, message = "La descripció ha de tenir entre 1 i 255 caràcters")
     @Column(nullable = false)
     private String description;
-    
+
     @Column(nullable = false)
     private boolean completed = false;
-    
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
-    
+
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-    
+
     @Column(name = "completed_at")
     private LocalDateTime completedAt;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Priority priority = Priority.MEDIUM;
-    
+
     @Column(length = 500)
     private String notes;
 
@@ -71,6 +71,7 @@ public class Task {
         }
     }
 
+    // Getters i setters
     public Long getId() {
         return id;
     }
@@ -138,16 +139,16 @@ public class Task {
     // Enum per a prioritats
     public enum Priority {
         LOW("Baixa"),
-        MEDIUM("Mitjana"), 
+        MEDIUM("Mitjana"),
         HIGH("Alta"),
         URGENT("Urgent");
-        
+
         private final String displayName;
-        
+
         Priority(String displayName) {
             this.displayName = displayName;
         }
-        
+
         public String getDisplayName() {
             return displayName;
         }
