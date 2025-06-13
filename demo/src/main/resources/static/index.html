@@ -3,20 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List Spring - Gestió de Tasques</title>
-    <style>
-        /* Estils CSS globals */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>API TODO v4 - Gestió de Tasques</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <h1>🚀 API TODO v4</h1>
+            
+            <!-- Targeta d'estadístiques -->
+            <div class="stats-card">
+                <h3>📊 Estadístiques de Tasques</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalTasks">0</div>
+                        <div>Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="completedTasks">0</div>
+                        <div>Completades</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="pendingTasks">0</div>
+                        <div>Pendents</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="urgentTasks">0</div>
+                        <div>Urgents</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <div style="margin-top: 10px;">
+                    Progrés: <span id="progressText">0%</span>
+                </div>
+            </div>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
-        }
+            <!-- Formulari per crear nova tasca -->
+            <div class="form-section">
+                <h3>✨ Crear Nova Tasca</h3>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="description">Descripció:</label>
+                        <input type="text" id="description" name="description" required 
+                               placeholder="Escriu la descripció de la tasca...">
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Prioritat:</label>
+                        <select id="priority" name="priority">
+                            <option value="LOW">Baixa</option>
+                            <option value="MEDIUM" selected>Mitjana</option>
+                            <option value="HIGH">Alta</option>
+                            <option value="URGENT">Urgent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes (opcional):</label>
+                        <textarea id="notes" name="notes" rows="3" 
+                                  placeholder="Afegeix notes addicionals..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        ➕ Crear Tasca
+                    </button>
+                </form>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">📋 Totes</button>
+                <button class="filter-btn" data-filter="pending">⏳ Pendents</button>
+                <button class="filter-btn" data-filter="completed">✅ Completades</button>
+                <button class="filter-btn" data-filter="urgent">🚨 Urgents</button>
+                <button class="filter-btn" data-filter="today">📅 Avui</button>
+            </div>
+
+            <!-- Caixa de cerca -->
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" 
+                       placeholder="🔍 Cercar tasques...">
+            </div>
+
+            <!-- Llista de tasques -->
+            <div id="tasksContainer" class="tasks-container">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div>Carregant tasques...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>⚡ Accions Ràpides</h3>
+            <button class="btn btn-success quick-action" onclick="createSampleData()">
+                📝 Crear Dades d'Exemple
+            </button>
+            <button class="btn btn-warning quick-action" onclick="markAllCompleted()">
+                ✅ Completar Totes
+            </button>
+            <button class="btn btn-danger quick-action" onclick="deleteCompletedTasks()">
+                🗑️ Eliminar Completades
+            </button>
+            <button class="btn btn-primary quick-action" onclick="refreshTasks()">
+                🔄 Actualitzar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal per editar tasca -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>✏️ Editar Tasca</h3>
+            <form id="editForm">
+                <input type="hidden" id="editTaskId">
+                <div class="form-group">
+                    <label for="editDescription">Descripció:</label>
+                    <input type="text" id="editDescription" name="description" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPriority">Prioritat:</label>
+                    <select id="editPriority" name="priority">
+                        <option value="LOW">Baixa</option>
+                        <option value="MEDIUM">Mitjana</option>
+                        <option value="HIGH">Alta</option>
+                        <option value="URGENT">Urgent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editNotes">Notes:</label>
+                    <textarea id="editNotes" name="notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    💾 Desar Canvis
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
 
   
